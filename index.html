@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kavya D G | Java Full Stack Developer</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e0f2fe, #ede9fe, #fff7ed);
+      color: #222;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(120deg, #3b82f6, #9333ea, #ec4899);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.15) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    header h1 {
+      font-size: 3em;
+      z-index: 1;
+    }
+
+    header p {
+      font-size: 1.3em;
+      margin: 10px 0 20px;
+      z-index: 1;
+    }
+
+    .btn {
+      background: white;
+      color: #3b82f6;
+      padding: 10px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      z-index: 1;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    nav {
+      background: linear-gradient(90deg, #9333ea, #3b82f6);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background: rgba(255,255,255,0.2);
+      border-radius: 8px;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 80px auto;
+      padding: 20px;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      color: #1e3a8a;
+      margin-bottom: 20px;
+      border-left: 6px solid #9333ea;
+      padding-left: 12px;
+    }
+
+    ul { list-style: none; }
+    li {
+      background: linear-gradient(90deg, #e0f2fe, #ede9fe);
+      padding: 12px 18px;
+      margin: 8px 0;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    li:hover { transform: translateX(8px); }
+
+    .skill-bar {
+      background: #ddd;
+      border-radius: 20px;
+      margin: 10px 0;
+      height: 12px;
+      overflow: hidden;
+    }
+
+    .skill-level {
+      height: 100%;
+      background: linear-gradient(90deg, #3b82f6, #9333ea);
+      width: 0%;
+      border-radius: 20px;
+      transition: width 1.5s ease;
+    }
+
+    .project, .education {
+      background: white;
+      padding: 25px;
+      margin: 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .project:hover, .education:hover {
+      background: linear-gradient(135deg, #f0abfc, #c7d2fe);
+      transform: translateY(-5px);
+      transition: 0.4s;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: linear-gradient(90deg, #3b82f6, #9333ea);
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2em; }
+      .btn { padding: 8px 18px; font-size: 0.9em; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Kavya D G</h1>
+    <p>Java Full Stack Developer</p>
+    <a href="#about" class="btn">Explore My Portfolio</a>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a passionate and detail-oriented <strong>Java Full Stack Developer</strong> dedicated to building modern, responsive, and efficient web applications. 
+      With strong problem-solving abilities and a continuous learning mindset, I strive to create impactful digital solutions that combine functionality with seamless user experiences.
+    </p>
+
+    <p>
+      My expertise spans both <strong>front-end and back-end development</strong>. 
+      On the front end, I craft intuitive interfaces using <strong>HTML, CSS, JavaScript, and React</strong>. 
+      On the back end, I work with <strong>Java, SQL, and modern frameworks</strong> to develop reliable and scalable systems.
+    </p>
+
+    <p>
+      I have a keen interest in emerging technologies, especially in the fields of <strong>AI and automation</strong>. 
+      My recent project, <strong>“Generative AI – Speech to Image Generator”</strong>, reflects my curiosity and ability to integrate artificial intelligence with real-world applications.
+    </p>
+
+    <p>
+      Beyond technical proficiency, I bring strong <strong>teamwork, adaptability, communication, and critical thinking</strong> skills. 
+      I enjoy collaborating in team environments, exchanging ideas, and contributing to innovative solutions that make technology accessible and impactful.
+    </p>
+
+    <p>
+      My career goal is to become a highly skilled <strong>Software Engineer</strong> who contributes to large-scale, meaningful projects, while continuously evolving with modern technologies such as <strong>Cloud Computing, AI Integration, and Full Stack Development</strong>.
+    </p>
+
+    <a href="Kavya_DG_Resume.pdf" class="btn" download>📄 Download Resume</a>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <p>Here are some of my core technical skills:</p>
+    <ul>
+      <li>Java<div class="skill-bar"><div class="skill-level" data-skill="95"></div></div></li>
+      <li>HTML/CSS<div class="skill-bar"><div class="skill-level" data-skill="90"></div></div></li>
+      <li>JavaScript<div class="skill-bar"><div class="skill-level" data-skill="85"></div></div></li>
+      <li>React<div class="skill-bar"><div class="skill-level" data-skill="80"></div></div></li>
+      <li>SQL<div class="skill-bar"><div class="skill-level" data-skill="88"></div></div></li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Generative AI – Speech to Image Generator</h3>
+      <p>
+        This project takes spoken words as input and generates a visual output using Google Speech Recognition and Stable Diffusion. 
+        It eliminates manual typing and has real-world applications in education and content generation.
+      </p>
+      <a href="https://github.com/kavya-682/project/blob/main/project.py" target="_blank">🔗 View on GitHub</a>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="education">
+      <h3>B.E. – Computer Science Engineering</h3>
+      <p>Government Engineering College, Kushalanagara – 571234<br>Grade: 76.4% | Passing Year: 2025</p>
+    </div>
+    <div class="education">
+      <h3>PUC</h3>
+      <p>SJM INDP PU College, Hosadurga – 577527<br>Grade: 86.33% | Passing Year: 2021</p>
+    </div>
+    <div class="education">
+      <h3>SSLC</h3>
+      <p>Gaviranganatha Vidya Peeta High School, Tumakuru – 572119<br>Grade: 88.8% | Passing Year: 2019</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:kavyauppara682@gmail.com">kavyauppara682@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/kavya-d-g-5b35012a4">linkedin.com/in/kavya-d-g-5b35012a4</a></p>
+    <p>GitHub: <a href="https://github.com/kavya-682">github.com/kavya-682</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Kavya D G | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Fade-in sections
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    sections.forEach(section => observer.observe(section));
+
+    // Animate skill bars
+    const skillBars = document.querySelectorAll('.skill-level');
+    const showSkills = () => {
+      skillBars.forEach(bar => {
+        const level = bar.getAttribute('data-skill');
+        bar.style.width = level + '%';
+      });
+    };
+    window.addEventListener('scroll', showSkills);
+  </script>
+</body>
+</html>
