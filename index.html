@@ -1,241 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kavya D G | Java Full Stack Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
-      background: #0a2540;
-      color: #fff;
-      margin: 0;
-      display: flex;
-      min-height: 100vh;
-    }
-    aside {
-      width: 320px;
-      background: #102a43;
-      padding: 40px 30px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-shadow: 2px 0 20px rgba(0,0,0,0.12);
-    }
-    .profile-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 24px;
-      border: 4px solid #2e7cf6;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
-    }
-    .name {
-      font-size: 2.2em;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: #2e7cf6;
-      text-align: center;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-    .role {
-      font-size: 1.1em;
-      color: #fff;
-      margin-bottom: 24px;
-      text-align: center;
-      font-weight: 500;
-      letter-spacing: 1px;
-    }
-    nav {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      margin-bottom: 32px;
-      width: 100%;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1em;
-      padding: 10px 0 10px 16px;
-      border-left: 4px solid transparent;
-      transition: border-color 0.2s, color 0.2s, background 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      border-radius: 8px 0 0 8px;
-    }
-    nav a:hover, nav a.active {
-      color: #2e7cf6;
-      background: #fff;
-      border-left: 4px solid #2e7cf6;
-    }
-    .nav-icon {
-      font-size: 1.3em;
-      color: #2e7cf6;
-      transition: color 0.2s;
-    }
-    nav a:hover .nav-icon, nav a.active .nav-icon {
-      color: #0a2540;
-    }
-    .social {
-      display: flex;
-      gap: 18px;
-      margin-top: auto;
-      margin-bottom: 10px;
-    }
-    .social a {
-      color: #2e7cf6;
-      font-size: 1.7em;
-      transition: color 0.2s;
-    }
-    .social a:hover {
-      color: #fff;
-    }
-    main {
-      flex: 1;
-      padding: 60px 60px 40px 60px;
-      max-width: 900px;
-      margin: auto;
-    }
-    section {
-      margin-bottom: 60px;
-      padding-bottom: 30px;
-      border-bottom: 1px solid #1c3d5a;
-      position: relative;
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 2px 16px rgba(46,124,246,0.12);
-      padding-left: 80px;
-      color: #0a2540;
-    }
-    .section-icon {
-      position: absolute;
-      left: 20px;
-      top: 28px;
-      font-size: 2.7em;
-      color: #fff;
-      background: #2e7cf6;
-      border-radius: 50%;
-      padding: 18px;
-      box-shadow: 0 2px 8px rgba(46,124,246,0.12);
-      display: inline-block;
-      border: 3px solid #fff;
-    }
-    h2 {
-      font-size: 2.1em;
-      color: #2e7cf6;
-      margin-bottom: 18px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    .btn {
-      display: inline-block;
-      background: #2e7cf6;
-      color: #fff;
-      padding: 10px 28px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 18px;
-      transition: background 0.2s, color 0.2s;
-      letter-spacing: 1px;
-      border: 2px solid #2e7cf6;
-    }
-    .btn:hover {
-      background: #0a2540;
-      color: #2e7cf6;
-      border: 2px solid #2e7cf6;
-    }
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-top: 12px;
-    }
-    .skill {
-      background: #2e7cf6;
-      color: #fff;
-      padding: 10px 22px;
-      border-radius: 18px;
-      font-weight: 600;
-      font-size: 1em;
-      box-shadow: 0 2px 8px rgba(46,124,246,0.08);
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-    }
-    .project, .education {
-      background: #f4f8fb;
-      padding: 22px;
-      border-radius: 12px;
-      margin-bottom: 18px;
-      box-shadow: 0 2px 8px rgba(46,124,246,0.08);
-      border-left: 5px solid #2e7cf6;
-    }
-    .project h3, .education h3 {
-      color: #2e7cf6;
-      margin-bottom: 8px;
-      font-size: 1.2em;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-    .project p, .education p {
-      color: #0a2540;
-      font-size: 1em;
-      font-weight: 400;
-    }
-    @media (max-width: 900px) {
-      aside { width: 100%; padding: 24px 10px; }
-      main { padding: 24px 10px; }
-      section { padding-left: 60px; }
-      .section-icon { left: 0; top: 18px; }
-    }
-    @media (max-width: 600px) {
-      body { flex-direction: column; }
-      aside { width: 100%; }
-      main { padding: 18px 4px; }
-      section { padding-left: 20px; }
-      .section-icon { display: none; }
-      h2 { margin-left: 0; }
-    }
-    footer {
-      text-align: center;
-      color: #fff;
-      font-size: 1em;
-      margin-top: 40px;
-      letter-spacing: 1px;
-    }
-  </style>
-  <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Kavya - Full Stack Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/Kavya FULL.png" />
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <aside>
-    <img src="c:\Users\Lenovo\OneDrive\Documents\WhatsApp Image 2025-09-04 at 18.12.06_a445ce11.jpg" alt="Profile" class="profile-img" />
-    <div class="name">Kavya D G</div>
-    <div class="role">Java Full Stack Developer</div>
-    <nav>
-      <a href="#about" class="active"><span class="nav-icon"><i class="fas fa-user"></i></span>About</a>
-      <a href="#skills"><span class="nav-icon"><i class="fas fa-cogs"></i></span>Skills</a>
-      <a href="#projects"><span class="nav-icon"><i class="fas fa-folder-open"></i></span>Projects</a>
-      <a href="#education"><span class="nav-icon"><i class="fas fa-graduation-cap"></i></span>Education</a>
-      <a href="#contact"><span class="nav-icon"><i class="fas fa-envelope"></i></span>Contact</a>
-    </nav>
-    <div class="social">
-      <a href="mailto:kavyauppara682@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/kavya-d-g-5b35012a4" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/kavya-682" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-    </div>
-  </aside>
-  <main>
-    <section id="about">
-      <span class="section-icon"><i class="fas fa-user"></i></span>
-      <h2>About Me</h2>
-      <p>
+    <video src="./Kavya FULL.mp4" 
+autoplay loop muted width="100%"
+    ></video>
+    <h1>Kavya  - Full Stack Developer</h1>
+    <p class="about" >Welcome to my portfolio website! Use the navigation below to explore:</p>
+     <nav >
+        <ul>
+        <li class="item"><a href="#about">About Me</a></li>
+        <li class ="item"><a href="#skills">Skills</a></li>
+        <li class ="item"><a href="#projects">Projects</a></li>
+        <li class ="item"><a href="#contact">Contact</a></li>
+        <li class ="item"><a href="./Kavya DG.pdf" download="">Download Resume</a></li>
+        
+    </ul>
+     </nav>
+    
+    <section >
+        <h2 id="about">About Me</h2>
+    <p>
         I am a passionate and detail-oriented <strong>Java Full Stack Developer</strong> dedicated to building modern, responsive, and efficient web applications. 
         With strong problem-solving abilities and a continuous learning mindset, I strive to create impactful digital solutions that combine functionality with seamless user experiences.
       </p>
@@ -244,57 +35,71 @@
         On the front end, I craft intuitive interfaces using <strong>HTML, CSS, JavaScript, and React</strong>. 
         On the back end, I work with <strong>Java, SQL, and modern frameworks</strong> to develop reliable and scalable systems.
       </p>
-      <a href="file:///C:/Users/Lenovo/Downloads/Kavya%20D%20G%20-%20Fresher.pdf" class="btn" target="_blank">📄 View Resume</a>
+    <p><button><a href="https://github.com/kavya-682" target="_blank">Visit My GitHub</a></button></p>
+
     </section>
-    <section id="skills">
-      <span class="section-icon"><i class="fas fa-cogs"></i></span>
-      <h2>Skills</h2>
-      <div class="skills-list">
-        <div class="skill">Java</div>
-        <div class="skill">HTML/CSS</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">React</div>
-        <div class="skill">SQL</div>
-      </div>
+    
+    <section>
+        <h2 >Education</h2>
+    <ul>
+        <li><strong>BE</strong> in <strong>Computer Science and Engineering Kushalanagara</strong>, VTU  University, 2021-2025</li>
+        <li><strong> PUC</strong> in <strong> SJM PU COLLEGE Hosdurga</strong>, 2019-2021</li>
+        <li> <strong>SSLC</strong>, <strong>S G R V P SCHOOL</strong> Dodda Ennegere, 2018-2019</li>
+    </ul>
     </section>
-    <section id="projects">
-      <span class="section-icon"><i class="fas fa-folder-open"></i></span>
-      <h2>Projects</h2>
-      <div class="project">
-        <h3>Generative AI – Speech to Image Generator</h3>
-        <p>
-          This project takes spoken words as input and generates a visual output using Google Speech Recognition and Stable Diffusion. 
-          It eliminates manual typing and has real-world applications in education and content generation.
-        </p>
-        <a href="https://github.com/kavya-682/project/blob/main/project.py" target="_blank" class="btn">🔗 View on GitHub</a>
-      </div>
+    <section>
+         <h2 id="skills">Skills</h2>
+    <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>Core Java, JDBC, JEE, Spring, Hibernate</li>
+        <li>MongoDB, SQL</li>
+    </ul>
     </section>
-    <section id="education">
-      <span class="section-icon"><i class="fas fa-graduation-cap"></i></span>
-      <h2>Education</h2>
-      <div class="education">
-        <h3>B.E. – Computer Science Engineering</h3>
-        <p>Government Engineering College, Kushalanagara – 571234<br>Grade: 76.4% | Passing Year: 2025</p>
-      </div>
-      <div class="education">
-        <h3>PUC</h3>
-        <p>SJM INDP PU College, Hosadurga – 577527<br>Grade: 86.33% | Passing Year: 2021</p>
-      </div>
-      <div class="education">
-        <h3>SSLC</h3>
-        <p>Gaviranganatha Vidya Peeta High School, Tumakuru – 572119<br>Grade: 88.8% | Passing Year: 2019</p>
-      </div>
+    <section>
+        <h2>Learning Goals</h3>
+    <ol>
+        <li>Advanced Frontend Development
+            <ul>
+                <li>React.js</li>
+                <li>Next.js</li>
+            </ul>
+        </li>
+        <li>API Development
+            <ul>
+                <li>RESTful APIs</li>
+                <li>Application Programming Interface for system communication</li>
+            </ul>
+        </li>
+        <li>CI/CD
+            <ul>
+                <li>Continuous Integration and Continuous Deployment practices</li>
+            </ul>
+        </li>
+    </ol>
     </section>
-    <section id="contact">
-      <span class="section-icon"><i class="fas fa-envelope"></i></span>
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:kavyauppara682@gmail.com">kavyauppara682@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/kavya-d-g-5b35012a4">linkedin.com/in/kavya-d-g-5b35012a4</a></p>
-      <p>GitHub: <a href="https://github.com/kavya-682">github.com/kavya-682</a></p>
+
+    <section>
+        <h2 id="projects">Projects</h2>
+    <ul>
+        <li><a href="#">Task Manager App</a></li>
+        <li><a href="#">Weather Dashboard</a></li>
+    </ul>
+
     </section>
-    <footer>
-      <p>&copy; 2025 Kavya D G | All Rights Reserved</p>
-    </footer>
-  </main>
+    <section>
+    <h2 id="contact">Contact</h2>
+    <p>Email: <a href="mailto:kavyauppara682@gmail.com">kavyauppara682@gmail.com</a></p>
+    <p>Phone: <a href="tel:+911234567890">+91 12345 67890</a></p>
+
+    </section>
+    <p class="contact">
+        <a href="http://www.linkedin.com/in/kavya-dg" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30" alt="LinkedIn"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" width="30" alt="Twitter"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="30" alt="Instagram"></a>
+    
+    <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeTbOMGThDVQgiBi8j6xcrvFSOu-UAk5ahlg&s" width="30" alt="GitHub"></a> 
+    </p>
 </body>
 </html>
+
+
